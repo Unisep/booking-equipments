@@ -1,20 +1,20 @@
 development: &default
   adapter: postgresql
   encoding: unicode
-  host: localhost
-  database: reservy_development
+  host: <%= ENV['PSQL_HOST'] || 'localhost' %>
+  database: ifme_development
   allow_concurrency: true
   pool: 5
   min_messages: warning
 
 test:
   <<: *default
-  database: reservy_test
+  database: ifme_test
   min_messages: error
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: reservy_production
+  database: ifme_production
   allow_concurrency: true
   pool: 5
