@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      booking:
+        one: Reserva
+        other: Reservas
+    attributes:
+      booking:
+        book_at: Data de Início
+        hardware: Equipamento
+        ending_book_at: Data de Término
+        created_at: Data de Criação

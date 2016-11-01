@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: Pessoa
+        other: Pessoas
+    attributes:
+      user:
+        name: Nome Completo
+        email: E-mail
+        created_at: Cadastrado em
+        password_confirmation: Confirmação de Senha
+        password: Senha
+        last_login_at: Último Acesso em

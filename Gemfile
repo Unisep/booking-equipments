@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
 gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 
 group :development do
   gem 'spring'

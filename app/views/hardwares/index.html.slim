@@ -1,23 +1,24 @@
-h1 Listing hardwares
-
-table
+- model_class = Hardware
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
   thead
     tr
-      th Model
-      th Brand
-      th
-      th
-      th
-
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:brand)
+      th= model_class.human_attribute_name(:model)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
   tbody
     - @hardwares.each do |hardware|
       tr
-        td = hardware.model
-        td = hardware.brand
-        td = link_to 'Show', hardware
-        td = link_to 'Edit', edit_hardware_path(hardware)
-        td = link_to 'Destroy', hardware, data: { confirm: 'Are you sure?' }, method: :delete
+        td= link_to hardware.id, hardware_path(hardware)
+        td= hardware.brand
+        td= hardware.model
+        td=l hardware.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_hardware_path(hardware), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), hardware_path(hardware), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-br
-
-= link_to 'New Hardware', new_hardware_path
+= link_to t('.new', :default => t("helpers.links.new")), new_hardware_path, :class => 'btn btn-primary'

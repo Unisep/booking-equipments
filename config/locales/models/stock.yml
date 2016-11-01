@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      stock:
+        one: Estoque
+        other: Estoques
+    attributes:
+      stock:
+        quantity: Quantidade Atual
+        hardware: Equipamento
+        created_at: Data de Criação

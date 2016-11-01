@@ -17,7 +17,6 @@ html lang="en"
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
 
-
   body
     .navbar.navbar-default.navbar-static-top
         .container
@@ -25,26 +24,31 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"Reservy
+          a.navbar-brand href="/" Reservy
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+              li.text-left = link_to tm(Hardware), hardwares_url
+              li.text-left = link_to tm(Booking), bookings_url
+              li.text-left = link_to tm(Stock), stocks_url
 
     .container
       .row
         .col-lg-9
           = bootstrap_flash
           = yield
+
         .col-lg-3
           .well.sidebar-nav
-            h3 Sidebar
+            h3.text-left Atalhos
             ul.nav.nav-list
-              li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+              li = link_to tmp(Hardware), hardwares_url
+              li = link_to tmp(Booking), bookings_url
+              li = link_to tmp(Stock), stocks_url
 
-      footer
-        p &copy; Company 2016
+    footer.footer
+     .container.text-center
+       p.text-muted
+         | Todos os direitos reservados (zoa, tá no&nbsp;
+         = link_to 'github', 'https://github.com/Unisep/booking-equipments'
+         |&nbsp;só pegar!) © 2016 &nbsp;
+         = link_to 'https://brunoocasali.xyz', 'https://brunoocasali.xyz'

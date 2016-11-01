@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      hardware:
+        one: Equipamento
+        other: Equipamentos
+    attributes:
+      hardware:
+        brand: Marca
+        model: Modelo
+        created_at: Data de Criação

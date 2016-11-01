@@ -1,8 +1,4 @@
-h1 Editing booking
-
-== render 'form'
-
-= link_to 'Show', @booking
-'|
-= link_to 'Back', bookings_path
-
+- model_class = Booking
+.page-header
+  h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+= render :partial => "form"

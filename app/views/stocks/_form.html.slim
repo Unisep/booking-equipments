@@ -1,9 +1,10 @@
-= simple_form_for(@stock) do |f|
-  = f.error_notification
+= simple_form_for @stock, html: { class: "form-horizontal" } do |f|
+  = f.input :quantity
+  = f.error_span(:quantity)
 
-  .form-inputs
-    = f.input :quantity
-    = f.association :hardware
+  = f.association :hardware
+  = f.error_span(:hardware_id)
 
-  .form-actions
-    = f.button :submit
+  = f.button :submit, class: 'btn-primary'
+  '
+  = link_to t('.cancel', default: t("helpers.links.cancel")), stocks_path, class: 'btn btn-default'

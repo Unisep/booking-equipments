@@ -1,23 +1,24 @@
-h1 Listing stocks
-
-table
+- model_class = Stock
+.page-header
+  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+table.table.table-striped
   thead
     tr
-      th Quantity
-      th Hardware
-      th
-      th
-      th
-
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:quantity)
+      th= model_class.human_attribute_name(:hardware_id)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
   tbody
     - @stocks.each do |stock|
       tr
-        td = stock.quantity
-        td = stock.hardware
-        td = link_to 'Show', stock
-        td = link_to 'Edit', edit_stock_path(stock)
-        td = link_to 'Destroy', stock, data: { confirm: 'Are you sure?' }, method: :delete
+        td= link_to stock.id, stock_path(stock)
+        td= stock.quantity
+        td= stock.hardware_id
+        td=l stock.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_stock_path(stock), :class => 'btn btn-default btn-xs'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), stock_path(stock), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-br
-
-= link_to 'New Stock', new_stock_path
+= link_to t('.new', :default => t("helpers.links.new")), new_stock_path, :class => 'btn btn-primary'
