@@ -11,12 +11,12 @@ gem 'kaminari'
 gem 'responders'
 
 gem 'devise'
+gem 'simple_form'
 
-gem 'slim'
+gem 'slim-rails'
 
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
 
 gem 'twitter-bootstrap-rails'
 

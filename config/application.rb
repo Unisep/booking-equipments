@@ -3,7 +3,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-module BookingEquipments
+module Reservy
   class Application < Rails::Application
     Dir.glob(Rails.root.join('config/locales/**/*/')).each do |dir|
       paths['config/locales'] << dir

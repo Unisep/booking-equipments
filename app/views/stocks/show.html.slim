@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Quantity:
+  = @stock.quantity
+p
+  strong Hardware:
+  = @stock.hardware
+
+= link_to 'Edit', edit_stock_path(@stock)
+'|
+= link_to 'Back', stocks_path

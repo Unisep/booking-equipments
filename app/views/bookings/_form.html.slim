@@ -1,0 +1,9 @@
+= simple_form_for(@booking) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :book_at
+    = f.association :hardware
+
+  .form-actions
+    = f.button :submit

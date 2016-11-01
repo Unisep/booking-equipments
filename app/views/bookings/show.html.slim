@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Book at:
+  = @booking.book_at
+p
+  strong Hardware:
+  = @booking.hardware
+
+= link_to 'Edit', edit_booking_path(@booking)
+'|
+= link_to 'Back', bookings_path

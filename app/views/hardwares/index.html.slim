@@ -1,0 +1,23 @@
+h1 Listing hardwares
+
+table
+  thead
+    tr
+      th Model
+      th Brand
+      th
+      th
+      th
+
+  tbody
+    - @hardwares.each do |hardware|
+      tr
+        td = hardware.model
+        td = hardware.brand
+        td = link_to 'Show', hardware
+        td = link_to 'Edit', edit_hardware_path(hardware)
+        td = link_to 'Destroy', hardware, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Hardware', new_hardware_path

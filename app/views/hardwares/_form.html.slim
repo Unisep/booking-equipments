@@ -1,0 +1,8 @@
+= simple_form_for @hardware do |f|
+  = f.error_notification
+
+  .field
+    = f.input :model
+  .field
+    = f.input :brand
+  .actions = f.submit
