@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      equipment_type:
+        one: Tipo de Equipamento
+        other: Tipo de Equipamento
+    attributes:
+      equipment_type:
+        name: Nome
+        created_at: Criado em
