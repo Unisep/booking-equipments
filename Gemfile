@@ -12,23 +12,36 @@ gem 'responders'
 
 gem 'devise'
 
+gem 'slim'
+
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'twitter-bootstrap-rails'
 
-group :development, :test do
-	gem 'pry-rails'
+group :development do
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test, :development do
+  gem 'pry-rails'
+
+  gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'forgery'
+  gem 'brazilian_forgery'
   gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'simplecov', require: false
 end
 
-group :development do
-	gem 'spring'
-	gem 'spring-watcher-listen', '~> 2.0.0'
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
 end
 
-group :development do
-	gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
 end
