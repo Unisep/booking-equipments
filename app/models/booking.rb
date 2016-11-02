@@ -8,19 +8,26 @@ class Booking < ApplicationRecord
   validates :quantity, presence: true
   validates :ending_book_at, presence: true
 
-  validate :can_books?
+  validate :check_stocks, if: 'hardware.present?'
+  validate :check_dates
 
-  # before_create :book_now!
+  before_create :book_now!
 
-  def can_books?
-    # não tem estoque.
-    #
+  private
+
+  def check_stocks
+    stock = hardware.stock
+
+    return true if stock.present? && stock.quantity >= quantity
+
+    errors.add(:hardware, :not_stock_enough)
   end
+
+  def check_dates; end
 
   def book_now!
+    ActiveRecord::Base.transaction do
+      hardware.stock.decrease!
+    end
   end
-
-  # ao fazer uma reserva:
-  # diiminuir estoque
-  # gerar nova reserva da pessoa + equipamento + datas
 end

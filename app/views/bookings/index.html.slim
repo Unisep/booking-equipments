@@ -6,8 +6,8 @@ table.table.table-striped
     tr
       th = ta(Booking, :id)
       th = ta(Booking, :book_at)
+      th = ta(Booking, :ending_book_at)
       th = ta(Booking, :hardware)
-      th = ta(Booking, :created_at)
       th = t '.actions', default: t("helpers.actions")
   tbody
     - @bookings.each do |booking|
@@ -15,7 +15,8 @@ table.table.table-striped
         td = link_to booking.id, booking_path(booking)
         td = l booking.book_at, format: :short
         td = booking.hardware
-        td = l booking.created_at, format: :short
+        td = booking.quantity
+        td = l booking.ending_book_at, format: :short
         td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_booking_path(booking), class: 'btn btn-default btn-xs'
           '

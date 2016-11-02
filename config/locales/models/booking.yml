@@ -12,3 +12,9 @@ pt-BR:
         created_at: Data de Criação
         quantity: Quantidade
         user: Usuário
+    errors:
+      models:
+        booking:
+          attributes:
+            hardware:
+              not_stock_enough: Não existe estoque suficiente para o equipamento desejado.

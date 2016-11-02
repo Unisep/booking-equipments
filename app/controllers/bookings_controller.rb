@@ -48,6 +48,6 @@ class BookingsController < ApplicationController
     params[:booking][:user_id] = current_user.id
 
     params.require(:booking)
-      .permit(:book_at, :hardware_id, :ending_book_at, :quantity)
+      .permit(:book_at, :hardware_id, :ending_book_at, :quantity, :user_id)
   end
 end
