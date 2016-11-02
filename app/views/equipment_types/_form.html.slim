@@ -2,6 +2,7 @@
   = f.input :name
   = f.error_span(:name)
 
-  = f.button :submit, class: 'btn-primary'
-  '
-  = link_to t('.cancel', default: t("helpers.links.cancel")), equipment_types_path, class: 'btn btn-default'
+  .form-group
+    = f.button :submit, class: 'btn-primary'
+    '
+    = link_to t('.cancel', default: t("helpers.links.cancel")), equipment_types_path, class: 'btn btn-default'

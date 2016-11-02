@@ -16,6 +16,7 @@ pt-BR:
       destroy: "Deletar"
       new: "Novo"
       edit: "Editar"
+      show: 'Exibir'
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"

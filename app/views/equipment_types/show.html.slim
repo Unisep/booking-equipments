@@ -6,6 +6,16 @@ p
   br
   = @equipment_type
 
+p
+  strong = "#{ta(EquipmentType, :hardwares)} associados (#{@equipment_type.hardwares.count}):"
+  - @equipment_type.hardwares.each do |hardware|
+    br
+    = " - #{hardware}"
+    |&nbsp;
+    = link_to t('.show', default: t("helpers.links.show")), hardware_path(hardware)
+
+br
+
 = link_to t('.back', default: t("helpers.links.back")), equipment_types_path, class: 'btn btn-default'
 '
 = link_to t('.edit', default: t("helpers.links.edit")), edit_equipment_type_path(@equipment_type), class: 'btn btn-default'

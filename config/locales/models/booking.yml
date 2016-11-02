@@ -10,3 +10,5 @@ pt-BR:
         hardware: Equipamento
         ending_book_at: Data de Término
         created_at: Data de Criação
+        quantity: Quantidade
+        user: Usuário

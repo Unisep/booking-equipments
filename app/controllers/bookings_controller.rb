@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
 
     respond_with(@bookings)
   end
@@ -45,6 +45,9 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:book_at, :hardware_id, :ending_book_at)
+    params[:booking][:user_id] = current_user.id
+
+    params.require(:booking)
+      .permit(:book_at, :hardware_id, :ending_book_at, :quantity)
   end
 end

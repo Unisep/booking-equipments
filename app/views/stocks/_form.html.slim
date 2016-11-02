@@ -5,6 +5,7 @@
   = f.association :hardware
   = f.error_span(:hardware_id)
 
-  = f.button :submit, class: 'btn-primary'
-  '
-  = link_to t('.cancel', default: t("helpers.links.cancel")), stocks_path, class: 'btn btn-default'
+  .form-group
+    = f.button :submit, class: 'btn-primary'
+    '
+    = link_to t('.cancel', default: t("helpers.links.cancel")), stocks_path, class: 'btn btn-default'

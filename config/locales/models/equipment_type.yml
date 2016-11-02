@@ -8,3 +8,4 @@ pt-BR:
       equipment_type:
         name: Nome
         created_at: Criado em
+        hardwares: Equipamentos
