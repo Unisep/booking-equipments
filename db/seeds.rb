@@ -3,5 +3,5 @@ EquipmentType.create([{ name: 'Retroprojetor' },
                       { name: 'Auditório' },
                       { name: 'Anfi-Teatro' },
                       { name: 'Sala de Reunião' },
-                      { name: 'Home Theater' },])
+                      { name: 'Home Theater' },
                       { name: 'Diversos' }])

@@ -1,24 +1,25 @@
-- model_class = Booking
 .page-header
-  h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+  h1 = t '.title', default: tmp(Booking)
+
 table.table.table-striped
   thead
     tr
-      th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:book_at)
-      th= model_class.human_attribute_name(:hardware_id)
-      th= model_class.human_attribute_name(:created_at)
-      th=t '.actions', :default => t("helpers.actions")
+      th = tma(Booking, :id)
+      th = tma(Booking, :book_at)
+      th = tma(Booking, :hardware_id)
+      th = tma(Booking, :created_at)
+      th = t '.actions', default: t("helpers.actions")
   tbody
     - @bookings.each do |booking|
       tr
-        td= link_to booking.id, booking_path(booking)
-        td= booking.book_at
-        td= booking.hardware_id
-        td=l booking.created_at
+        td = link_to booking.id, booking_path(booking)
+        td = booking.book_at
+        td = booking.hardware_id
+        td = l booking.created_at
         td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_booking_path(booking), :class => 'btn btn-default btn-xs'
+          = link_to t('.edit', default: t("helpers.links.edit")), edit_booking_path(booking), class: 'btn btn-default btn-xs'
           '
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), booking_path(booking), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+          = link_to t('.destroy', default: t("helpers.links.destroy")), booking_path(booking), method: :delete,
+            data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) }, class: 'btn btn-xs btn-danger'
 
-= link_to t('.new', :default => t("helpers.links.new")), new_booking_path, :class => 'btn btn-primary'
+= link_to t('.new', default: t("helpers.links.new")), new_booking_path, class: 'btn btn-primary'

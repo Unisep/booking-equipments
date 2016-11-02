@@ -3,7 +3,7 @@ pt-BR:
     models:
       equipment_type:
         one: Tipo de Equipamento
-        other: Tipo de Equipamento
+        other: Tipo de Equipamentos
     attributes:
       equipment_type:
         name: Nome

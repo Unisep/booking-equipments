@@ -3,6 +3,7 @@ class HardwaresController < ApplicationController
 
   def index
     @hardwares = Hardware.all
+
     respond_with(@hardwares)
   end
 
@@ -12,34 +13,38 @@ class HardwaresController < ApplicationController
 
   def new
     @hardware = Hardware.new
+
     respond_with(@hardware)
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @hardware = Hardware.new(hardware_params)
     @hardware.save
+
     respond_with(@hardware)
   end
 
   def update
     @hardware.update(hardware_params)
+
     respond_with(@hardware)
   end
 
   def destroy
     @hardware.destroy
+
     respond_with(@hardware)
   end
 
   private
-    def set_hardware
-      @hardware = Hardware.find(params[:id])
-    end
 
-    def hardware_params
-      params.require(:hardware).permit(:model, :brand)
-    end
+  def set_hardware
+    @hardware = Hardware.find(params[:id])
+  end
+
+  def hardware_params
+    params.require(:hardware).permit(:model, :brand, :equipment_type_id)
+  end
 end

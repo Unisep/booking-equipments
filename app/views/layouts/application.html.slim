@@ -30,20 +30,19 @@ html lang="en"
               li.text-left = link_to tm(Hardware), hardwares_url
               li.text-left = link_to tm(Booking), bookings_url
               li.text-left = link_to tm(Stock), stocks_url
+              li.text-left = link_to tmp(EquipmentType), equipment_types_url
+            - if current_user
+              ul.nav.navbar-nav.navbar-right
+                li.text-left
+                  = link_to raw('<i class="fa fa-sign-out" aria-hidden="true"></i>'), destroy_user_session_path, method: :delete
 
     .container
       .row
-        .col-lg-9
-          = bootstrap_flash
-          = yield
-
-        .col-lg-3
-          .well.sidebar-nav
-            h3.text-left Atalhos
-            ul.nav.nav-list
-              li = link_to tmp(Hardware), hardwares_url
-              li = link_to tmp(Booking), bookings_url
-              li = link_to tmp(Stock), stocks_url
+        .col-lg-12
+          .col-lg-8.col-lg-offset-2
+            = bootstrap_flash
+          .col-lg-12
+            = yield
 
     footer.footer
      .container.text-center

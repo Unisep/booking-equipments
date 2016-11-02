@@ -5,4 +5,7 @@
   = f.input :brand
   = f.error_span(:brand)
 
+  = f.association :type
+  = f.error_span(:type)
+
   = f.button :submit, class: 'btn-primary'

@@ -6,6 +6,7 @@ pt-BR:
         other: Equipamentos
     attributes:
       hardware:
+        type: Tipo de Equipamento
         brand: Marca
         model: Modelo
         created_at: Data de Criação
