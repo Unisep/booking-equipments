@@ -34,7 +34,7 @@ html lang="en"
             - if current_user
               ul.nav.navbar-nav.navbar-right
                 li.text-left(title="Perfil") = link_to "Olá, #{current_user.name}", edit_user_registration_path
-                li.text-left = link_to raw("<i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>"), destroy_user_session_path, method: :delete
+                li.text-left(title="Sair") = link_to raw("<i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i>"), destroy_user_session_path, method: :delete
 
     .container
       .row
