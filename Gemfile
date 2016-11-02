@@ -15,6 +15,8 @@ gem 'simple_form'
 
 gem 'slim-rails'
 
+gem 'therubyracer'
+
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 
