@@ -1,3 +1,5 @@
 .page-header
   h1 = t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: tm(Stock)
-= render :partial => "form"
+
+.col-lg-9
+  = render partial: "form"

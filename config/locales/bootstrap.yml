@@ -20,4 +20,5 @@ pt-BR:
       edit: "Editar %{model}"
       save: "Salvar %{model}"
       new: "Novo %{model}"
+      new_a: "Nova %{model}"
       delete: "Deletar %{model}"

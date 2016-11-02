@@ -2,11 +2,11 @@
   h1 = t '.title', default: tm(Stock)
 
 p
-  strong = tma(Stock, :quantity) + ':'
+  strong = ta(Stock, :quantity) + ':'
   br
   = @stock.quantity
 p
-  strong = tma(Stock, :hardware_id) + ':'
+  strong = ta(Stock, :hardware_id) + ':'
   br
   = @stock.hardware_id
 

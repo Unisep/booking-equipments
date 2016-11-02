@@ -2,11 +2,11 @@
   h1 = t '.title', default: tmp(Booking)
 
 p
-  strong = tma(Booking, :book_at) + ':'
+  strong = ta(Booking, :book_at) + ':'
   br
   = @booking.book_at
 p
-  strong = tma(Booking, :hardware_id) + ':'
+  strong = ta(Booking, :hardware_id) + ':'
   br
   = @booking.hardware_id
 

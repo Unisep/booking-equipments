@@ -10,5 +10,6 @@ pt-BR:
         email: E-mail
         created_at: Cadastrado em
         password_confirmation: Confirmação de Senha
+        current_password: Senha Atual
         password: Senha
         last_login_at: Último Acesso em

@@ -4,16 +4,16 @@
 table.table.table-striped
   thead
     tr
-      th = tma(EquipmentType, :id)
-      th = tma(EquipmentType, :name)
-      th = tma(EquipmentType, :created_at)
+      th = ta(EquipmentType, :id)
+      th = ta(EquipmentType, :name)
+      th = ta(EquipmentType, :created_at)
       th = t '.actions', default: t("helpers.actions")
   tbody
     - @equipment_types.each do |equipment_type|
       tr
         td = link_to equipment_type.id, equipment_type_path(equipment_type)
         td = equipment_type.name
-        td = l equipment_type.created_at
+        td = l equipment_type.created_at, format: :short
         td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_equipment_type_path(equipment_type), class: 'btn btn-default btn-xs'
           '

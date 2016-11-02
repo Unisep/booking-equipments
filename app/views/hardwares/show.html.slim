@@ -2,15 +2,15 @@
   h1 = t '.title', default: tm(Hardware)
 
 p
-  strong = tma(Hardware, :brand) + ':'
+  strong = ta(Hardware, :brand) + ':'
   br
   = @hardware.brand
 p
-  strong = tma(Hardware, :model) + ':'
+  strong = ta(Hardware, :model) + ':'
   br
   = @hardware.model
 p
-  strong = tma(Hardware, :type) + ':'
+  strong = ta(Hardware, :type) + ':'
   br
   = @hardware.type
 

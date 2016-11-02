@@ -4,18 +4,18 @@
 table.table.table-striped
   thead
     tr
-      th = tma(Stock, :id)
-      th = tma(Stock, :quantity)
-      th = tma(Stock, :hardware_id)
-      th = tma(Stock, :created_at)
+      th = ta(Stock, :id)
+      th = ta(Stock, :quantity)
+      th = ta(Stock, :hardware)
+      th = ta(Stock, :created_at)
       th = t '.actions', default: t("helpers.actions")
   tbody
     - @stocks.each do |stock|
       tr
-        td= link_to stock.id, stock_path(stock)
-        td= stock.quantity
-        td= stock.hardware_id
-        td=l stock.created_at
+        td = link_to stock.id, stock_path(stock)
+        td = stock.quantity
+        td = stock.hardware
+        td = l stock.created_at, format: :short
         td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_stock_path(stock), class: 'btn btn-default btn-xs'
           '

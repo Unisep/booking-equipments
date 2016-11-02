@@ -4,18 +4,18 @@
 table.table.table-striped
   thead
     tr
-      th = tma(Booking, :id)
-      th = tma(Booking, :book_at)
-      th = tma(Booking, :hardware_id)
-      th = tma(Booking, :created_at)
+      th = ta(Booking, :id)
+      th = ta(Booking, :book_at)
+      th = ta(Booking, :hardware)
+      th = ta(Booking, :created_at)
       th = t '.actions', default: t("helpers.actions")
   tbody
     - @bookings.each do |booking|
       tr
         td = link_to booking.id, booking_path(booking)
-        td = booking.book_at
-        td = booking.hardware_id
-        td = l booking.created_at
+        td = l booking.book_at, format: :short
+        td = booking.hardware
+        td = l booking.created_at, format: :short
         td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_booking_path(booking), class: 'btn btn-default btn-xs'
           '

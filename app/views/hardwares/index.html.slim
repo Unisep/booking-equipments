@@ -4,18 +4,20 @@
 table.table.table-striped
   thead
     tr
-      th = tma(:id)
-      th = tma(:brand)
-      th = tma(:model)
-      th = tma(:created_at)
+      th = ta(Hardware, :id)
+      th = ta(Hardware, :brand)
+      th = ta(Hardware, :model)
+      th = ta(Hardware, :type)
+      th = ta(Hardware, :created_at)
       th = t '.actions', default: t("helpers.actions")
   tbody
     - @hardwares.each do |hardware|
       tr
-        td= link_to hardware.id, hardware_path(hardware)
-        td= hardware.brand
-        td= hardware.model
-        td=l hardware.created_at
+        td = link_to hardware.id, hardware_path(hardware)
+        td = hardware.brand
+        td = hardware.model
+        td = hardware.type
+        td = l hardware.created_at, format: :short
         td
           = link_to t('.edit', default: t("helpers.links.edit")), edit_hardware_path(hardware), class: 'btn btn-default btn-xs'
           '
