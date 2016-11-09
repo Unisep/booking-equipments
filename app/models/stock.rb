@@ -4,6 +4,16 @@ class Stock < ApplicationRecord
   validates :hardware, uniqueness: true
 
   def decrease!
-    update(quantity: quantity -= 1)
+    self.quantity ||= 0
+    self.quantity -= 1
+
+    save!
+  end
+
+  def increase!(value)
+    self.quantity ||= 0
+    self.quantity += value
+
+    save!
   end
 end

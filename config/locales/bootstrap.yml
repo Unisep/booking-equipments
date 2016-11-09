@@ -10,6 +10,7 @@ pt-BR:
   helpers:
     actions: "Ações"
     links:
+      refund: Devolver
       back: "Voltar"
       cancel: "Cancelar"
       confirm: "Você tem certeza?"

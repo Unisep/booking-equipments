@@ -6,9 +6,9 @@ p
   br
   = @stock.quantity
 p
-  strong = ta(Stock, :hardware_id) + ':'
+  strong = ta(Stock, :hardware) + ':'
   br
-  = @stock.hardware_id
+  = @stock.hardware
 
 = link_to t('.back', default: t("helpers.links.back")), stocks_path, class: 'btn btn-default'
 '

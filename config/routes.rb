@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :equipment_types
   get 'welcome/index'
 
-  resources :bookings
-  resources :stocks
   devise_for :users
 
+  resources :bookings do
+    put :refund, on: :member
+  end
+
+  resources :equipment_types
+  resources :stocks
   resources :hardwares
 
   root 'welcome#index'

@@ -4,11 +4,20 @@
 p
   strong = ta(Booking, :book_at) + ':'
   br
-  = @booking.book_at
+  = l @booking.book_at, format: :long
 p
-  strong = ta(Booking, :hardware_id) + ':'
+  strong = ta(Booking, :ending_book_at) + ':'
   br
-  = @booking.hardware_id
+  = l @booking.ending_book_at, format: :long
+p
+  strong = ta(Booking, :hardware) + ':'
+  br
+  = @booking.hardware
+p
+  strong = ta(Booking, :quantity) + ':'
+  br
+  = @booking.quantity
+
 
 = link_to t('.back', default: t("helpers.links.back")), bookings_path, class: 'btn btn-default'
 '

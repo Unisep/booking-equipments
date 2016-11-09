@@ -1,16 +1,20 @@
 = simple_form_for @booking, html: { class: "form-horizontal" } do |f|
   .form-group
     .col-lg-6
+      = f.error_span(:base)
+
+  .form-group
+    .col-lg-6
       = f.input :book_at
     .col-lg-6
       = f.input :ending_book_at
 
   .form-group
-    .col-lg-10
+    .col-lg-9
       = f.association :hardware, collection: EquipmentType.all, as: :grouped_select, group_method: :hardwares
 
     .col-lg-2
-      = f.input :quantity, input_html: { min: 0 }
+      = f.input :quantity, readonly: !@booking.new_record?, input_html: { min: 0 }
 
 
   .form-group

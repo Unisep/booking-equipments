@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy, :refund]
 
   def index
     @bookings = current_user.bookings
@@ -27,9 +27,15 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.update(booking_params)
+    @booking.update(booking_params.except(:quantity))
 
     respond_with(@booking)
+  end
+
+  def refund
+    @booking.refund!
+
+    respond_with(@booking, location: request.referer, notice: 'Equipamento devolvido com sucesso!')
   end
 
   def destroy
