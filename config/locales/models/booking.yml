@@ -17,7 +17,7 @@ pt-BR:
         booking:
           attributes:
             book_at:
-              dates_are_not_a_range: A data de término acontece antes da data de início.
+              dates_are_not_a_range: A data de término acontece antes ou no mesmo momento da data de início.
             base:
               cant_change_user_id: Não é possível editar uma reserva de outra pessoa.
             hardware:
