@@ -8,28 +8,28 @@
    | Reserve equipamentos/salas e tudo mais diretamente do&nbsp;
    b Reservy
 
-br
-br
-hr
-
-.text-left
-  h3
-    = "Últimas #{tmp(Booking)}"
+- if current_user
   br
+  br
+  hr
 
-  ul.list-group
-    - @bookings.each do |booking|
-      li.list-group-item
-        - if !booking.status
-          = raw "#{booking.hardware} - <b class='text-success'>Equipamento devolvido<b/>"
-        - elsif booking.ending_book_at > Time.zone.now && booking.status
-          = raw "#{booking.hardware} - <b class='text-info'>Devolução em #{distance_of_time_in_words(Time.zone.now, booking.ending_book_at)}<b/>"
-        - else
-          = raw "#{booking.hardware} - <b class='text-danger'>O prazo de devolução já acabou!<b/>"
+  .text-left
+    h3
+      = "Últimas #{tmp(Booking)}"
+    br
 
-        - if booking.status?
-          = link_to t('.refund', default: t('helpers.links.refund')), refund_booking_path(booking), method: :put, class: 'btn btn-xs btn-danger pull-right'
-    - if @bookings.empty?
-      li.list-group-item
-        | Sem reservas!
+    ul.list-group
+      - @bookings.each do |booking|
+        li.list-group-item
+          - if !booking.status
+            = raw "#{booking.hardware} - <b class='text-success'>Equipamento devolvido<b/>"
+          - elsif booking.ending_book_at > Time.zone.now && booking.status
+            = raw "#{booking.hardware} - <b class='text-info'>Devolução em #{distance_of_time_in_words(Time.zone.now, booking.ending_book_at)}<b/>"
+          - else
+            = raw "#{booking.hardware} - <b class='text-danger'>O prazo de devolução já acabou!<b/>"
 
+          - if booking.status?
+            = link_to t('.refund', default: t('helpers.links.refund')), refund_booking_path(booking), method: :put, class: 'btn btn-xs btn-danger pull-right'
+      - if @bookings.empty?
+        li.list-group-item
+          | Sem reservas!
