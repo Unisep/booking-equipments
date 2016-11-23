@@ -22,6 +22,7 @@ class Booking < ApplicationRecord
 
   def check_stocks
     stock = hardware.try(:stock)
+    quantity ||= quantity || 0
 
     return true if stock.present? && stock.quantity >= quantity
 
